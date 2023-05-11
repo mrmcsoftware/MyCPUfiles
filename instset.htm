@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <font color="#FFFF00">
+   <meta name="author" content="Mark Craig">
+   <meta name="description" content="Biorhythm Generator Privacy Statement">
+   <!-- meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8"--> 
+   <!-- meta http-equiv="Content-Type" content="text/html;charset=UTF-8" --> 
+   <!-- meta charset="UTF-8"--> 
+   <meta charset="ISO-8859-8"> 
+</head>
+<style>
+	body {
+		background-color: #101752;
+		background-image: url("bgimage.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		text-shadow: 3px 3px 2px #000000;
+	}
+
+	h1 {
+		color: #0000FF;
+		background-color: #a4d7ff;
+	}
+
+	h2 {
+		color: #FF0000;
+		background-color: #a4d7ff;
+	}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+</style>
+<body bgcolor="#002374">
+<!--font face="Times New Roman" size="+2"--!>
+<!--font face="Bangle" size="+2"--!>
+<!--font face="Courier" size="+2"--!>
+<!--font face="Courier New" size="+2"--!>
+<!--font face="Sylfaen" size="+2"--!>
+<!--font face="Typist" size="+2"--!>
+<font face="Courier New" size="+2">
+<h1 id="fb-welcome"></h1>
+<div class="container">
+<center>
+<TABLE BORDER=2 bgcolor="#6080c8" VALIGN=center CELLPADDING=4>
+<TR>
+<TH ALIGN=center><b>&nbsp;OpCode&nbsp;</b></TD>
+<TH ALIGN=center><b>Instruction</b></TD>
+<TH ALIGN=center><b>Function</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>0</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Z</b></TD--!>
+<!--TD ALIGN=left><b>&nbsp;Y &#8592 Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>1</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>2</b></TD>
+<TD ALIGN=left><b>&nbsp;STORE I</b></TD>
+<TD ALIGN=left><b>&nbsp;M(Z) &#8678 Y</b></TD>
+<!--TD ALIGN=left><b>&nbsp;M(Z) <- Y</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>3</b></TD>
+<TD ALIGN=left><b>&nbsp;STORE</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 M(Y), Z &#8678 M(A)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;A <- M(Y), Z <- M(A)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>4</b></TD>
+<TD ALIGN=left><b>&nbsp;ADD I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y + Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y + Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>5</b></TD>
+<TD ALIGN=left><b>&nbsp;ADD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y + M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y + M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>6</b></TD>
+<TD ALIGN=left><b>&nbsp;SUB I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y - Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y - Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>7</b></TD>
+<TD ALIGN=left><b>&nbsp;SUB</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y - M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y - M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>8</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP</b></TD>
+<TD ALIGN=left><b>&nbsp;PC &#8678 Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;PC <- Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>9</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP I (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;PC &#8678 M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;PC <- M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>10</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP II (ind.-ind.)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 M(Z), PC &#8678 M(A)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;A <- M(Z), PC <- M(A)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>11</b></TD>
+<TD ALIGN=left><b>&nbsp;DATA IN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 external data</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- external data</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>12</b></TD>
+<TD ALIGN=left><b>&nbsp;HALT</b></TD>
+<TD ALIGN=left><b>&nbsp;Stop running</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>13</b></TD>
+<TD ALIGN=left><b>&nbsp;SKIPNEG</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y is negative, PC &#8678 PC + 1&nbsp;</b></TD>
+<!--TD ALIGN=left><b>&nbsp;If Y is negative, PC <- PC + 1&nbsp;</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>14</b></TD>
+<TD ALIGN=left><b>&nbsp;STROBE</b></TD>
+<TD ALIGN=left><b>&nbsp;Generate STROBE pulse</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>15</b></TD>
+<TD ALIGN=left><b>&nbsp;NOOP</b></TD>
+<TD ALIGN=left><b>&nbsp;No Operation</b></TD>
+</TR>
+</TABLE>
+</center>
+</font>
+</div>
+</body>
+</font>
+</html>

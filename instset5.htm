@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <font color="#FFFF00">
+   <meta name="author" content="Mark Craig">
+   <meta name="description" content="Biorhythm Generator Privacy Statement">
+   <!-- meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8"--> 
+   <!-- meta http-equiv="Content-Type" content="text/html;charset=UTF-8" --> 
+   <!-- meta charset="UTF-8"--> 
+   <meta charset="ISO-8859-8"> 
+</head>
+<style>
+	body {
+		background-color: #101752;
+		background-image: url("bgimage.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		text-shadow: 3px 3px 2px #000000;
+	}
+
+	h1 {
+		color: #0000FF;
+		background-color: #a4d7ff;
+	}
+
+	h2 {
+		color: #FF0000;
+		background-color: #a4d7ff;
+	}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+</style>
+<body bgcolor="#002374">
+<!--font face="Times New Roman" size="+2"--!>
+<!--font face="Bangle" size="+2"--!>
+<!--font face="Courier" size="+2"--!>
+<!--font face="Courier New" size="+2"--!>
+<!--font face="Sylfaen" size="+2"--!>
+<!--font face="Typist" size="+2"--!>
+<font face="Courier New" size="+2">
+<h1 id="fb-welcome"></h1>
+<div class="container">
+<br>
+<center>
+<TABLE BORDER=2 bgcolor="#6080c8" VALIGN=center CELLPADDING=4>
+<TR>
+<TH ALIGN=center><b>&nbsp;OpCode&nbsp;</b></TD>
+<TH ALIGN=center><b>Instruction</b></TD>
+<TH ALIGN=center><b>Function</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>0</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Z</b></TD--!>
+<!--TD ALIGN=left><b>&nbsp;Y &#8592 Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>1</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>2</b></TD>
+<TD ALIGN=left><b>&nbsp;STORE I</b></TD>
+<TD ALIGN=left><b>&nbsp;M(Z) &#8678 Y</b></TD>
+<!--TD ALIGN=left><b>&nbsp;M(Z) <- Y</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>3</b></TD>
+<TD ALIGN=left><b>&nbsp;STORE</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 M(Y), Z &#8678 M(A)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;A <- M(Y), Z <- M(A)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>4</b></TD>
+<TD ALIGN=left><b>&nbsp;ADD I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y + Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y + Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>5</b></TD>
+<TD ALIGN=left><b>&nbsp;ADD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y + M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y + M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>6</b></TD>
+<TD ALIGN=left><b>&nbsp;SUB I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y - Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y - Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>7</b></TD>
+<TD ALIGN=left><b>&nbsp;SUB</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y - M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y - M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>8</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP</b></TD>
+<TD ALIGN=left><b>&nbsp;PC &#8678 Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;PC <- Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>9</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP I (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;PC &#8678 M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;PC <- M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>10</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP II (ind.-ind.)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 M(Z), PC &#8678 M(A)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;A <- M(Z), PC <- M(A)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>11</b></TD>
+<TD ALIGN=left><b>&nbsp;DATA IN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 external data</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- external data</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>12</b></TD>
+<TD ALIGN=left><b>&nbsp;HALT</b></TD>
+<TD ALIGN=left><b>&nbsp;Stop running</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>13</b></TD>
+<TD ALIGN=left><b>&nbsp;SKIPNEG</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y is negative, PC &#8678 PC + 1&nbsp;</b></TD>
+<!--TD ALIGN=left><b>&nbsp;If Y is negative, PC <- PC + 1&nbsp;</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>14</b></TD>
+<TD ALIGN=left><b>&nbsp;STROBE</b></TD>
+<TD ALIGN=left><b>&nbsp;Generate STROBE pulse</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>15</b></TD>
+<TD ALIGN=left><b>&nbsp;NOOP</b></TD>
+<TD ALIGN=left><b>&nbsp;No Operation</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>16</b></TD>
+<TD ALIGN=left><b>&nbsp;MUL I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y * Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y * Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>17</b></TD>
+<TD ALIGN=left><b>&nbsp;MUL</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y * M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y * M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>18</b></TD>
+<TD ALIGN=left><b>&nbsp;DIV I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y / Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y / Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>19</b></TD>
+<TD ALIGN=left><b>&nbsp;DIV</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y / M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y / M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>20</b></TD>
+<TD ALIGN=left><b>&nbsp;MOD I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y % Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y % Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>21</b></TD>
+<TD ALIGN=left><b>&nbsp;MOD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y % M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y % M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>22</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD A I</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 Z</b></TD>
+<!--TD ALIGN=left><b>&nbsp;A <- Z</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>23</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD A</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;A <- M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>24</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP EQ I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y = A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>25</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP GT I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y > A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>26</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP LT I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y < A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>27</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP NEQ I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ne; A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>28</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP GTE I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ge; A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>29</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP LTE I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &le; A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>30</b></TD>
+<TD ALIGN=left><b>&nbsp;NEG Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 -Y</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>31</b></TD>
+<TD ALIGN=left><b>&nbsp;STORE A I</b></TD>
+<TD ALIGN=left><b>&nbsp;M(Z) &#8678 A</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>32</b></TD>
+<TD ALIGN=left><b>&nbsp;LOAD A IND</b></TD>
+<TD ALIGN=left><b>&nbsp;A &#8678 M(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>33</b></TD>
+<TD ALIGN=left><b>&nbsp;AND I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y &amp Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>34</b></TD>
+<TD ALIGN=left><b>&nbsp;AND</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y &amp M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>35</b></TD>
+<TD ALIGN=left><b>&nbsp;OR I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y | Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>36</b></TD>
+<TD ALIGN=left><b>&nbsp;OR</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y | M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>37</b></TD>
+<TD ALIGN=left><b>&nbsp;NOT</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 ~Y</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>38</b></TD>
+<TD ALIGN=left><b>&nbsp;XOR I</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y ^ Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>39</b></TD>
+<TD ALIGN=left><b>&nbsp;XOR</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y ^ M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>40</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP EQ (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y = A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>41</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP GT (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y > A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>42</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP LT (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y < A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>43</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP NEQ (indirect)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ne; A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>44</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP GTE (indirect)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ge; A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>45</b></TD>
+<TD ALIGN=left><b>&nbsp;JUMP LTE (indirect)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &le; A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>46</b></TD>
+<TD ALIGN=left><b>&nbsp;STORE A IND</b></TD>
+<TD ALIGN=left><b>&nbsp;M(Y) &#8678 A</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>47</b></TD>
+<TD ALIGN=left><b>&nbsp;F ADD A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y + A</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y + A</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>48</b></TD>
+<TD ALIGN=left><b>&nbsp;F ADD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y + M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y + M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>49</b></TD>
+<TD ALIGN=left><b>&nbsp;F SUB A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y - A</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y - A</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>50</b></TD>
+<TD ALIGN=left><b>&nbsp;F SUB</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y - M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y - M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>51</b></TD>
+<TD ALIGN=left><b>&nbsp;F MUL A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y * A</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y * A</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>52</b></TD>
+<TD ALIGN=left><b>&nbsp;F MUL</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y * M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y * M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>53</b></TD>
+<TD ALIGN=left><b>&nbsp;F DIV A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y / A</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y / A</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>54</b></TD>
+<TD ALIGN=left><b>&nbsp;F DIV</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y / M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y / M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>55</b></TD>
+<TD ALIGN=left><b>&nbsp;F MOD A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y % A</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y % A</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>56</b></TD>
+<TD ALIGN=left><b>&nbsp;F MOD</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 Y % M(Z)</b></TD>
+<!--TD ALIGN=left><b>&nbsp;Y <- Y % M(Z)</b></TD--!>
+</TR>
+<TR>
+<TD ALIGN=center><b>57</b></TD>
+<TD ALIGN=left><b>&nbsp;F NEG Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 -Y</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>58</b></TD>
+<TD ALIGN=left><b>&nbsp;F SQRT Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 sqrt(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>59</b></TD>
+<TD ALIGN=left><b>&nbsp;F SQRT</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 sqrt(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>60</b></TD>
+<TD ALIGN=left><b>&nbsp;F SIN Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 sin(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>61</b></TD>
+<TD ALIGN=left><b>&nbsp;F SIN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 sin(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>62</b></TD>
+<TD ALIGN=left><b>&nbsp;F COS Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 cos(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>63</b></TD>
+<TD ALIGN=left><b>&nbsp;F COS</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 cos(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>64</b></TD>
+<TD ALIGN=left><b>&nbsp;F TAN Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 tan(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>65</b></TD>
+<TD ALIGN=left><b>&nbsp;F TAN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 tan(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>66</b></TD>
+<TD ALIGN=left><b>&nbsp;F ASIN Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 asin(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>67</b></TD>
+<TD ALIGN=left><b>&nbsp;F ASIN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 asin(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>68</b></TD>
+<TD ALIGN=left><b>&nbsp;F ACOS Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 acos(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>69</b></TD>
+<TD ALIGN=left><b>&nbsp;F ACOS</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 acos(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>70</b></TD>
+<TD ALIGN=left><b>&nbsp;F ATAN Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 atan(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>71</b></TD>
+<TD ALIGN=left><b>&nbsp;F ATAN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 atan(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>72</b></TD>
+<TD ALIGN=left><b>&nbsp;F ATAN2 A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 atan2(Y,A)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>73</b></TD>
+<TD ALIGN=left><b>&nbsp;F ATAN2</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 atan2(Y,M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>74</b></TD>
+<TD ALIGN=left><b>&nbsp;F POW A</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 pow(Y,A)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>75</b></TD>
+<TD ALIGN=left><b>&nbsp;F POW</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 pow(Y,M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>76</b></TD>
+<TD ALIGN=left><b>&nbsp;F LN Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 ln(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>77</b></TD>
+<TD ALIGN=left><b>&nbsp;F LN</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 ln(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>78</b></TD>
+<TD ALIGN=left><b>&nbsp;F LOG Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 log(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>79</b></TD>
+<TD ALIGN=left><b>&nbsp;F LOG</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 log(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>80</b></TD>
+<TD ALIGN=left><b>&nbsp;F ABS Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 abs(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>81</b></TD>
+<TD ALIGN=left><b>&nbsp;F ABS</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 abs(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>82</b></TD>
+<TD ALIGN=left><b>&nbsp;F EXP Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 exp(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>83</b></TD>
+<TD ALIGN=left><b>&nbsp;F EXP</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 exp(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>84</b></TD>
+<TD ALIGN=left><b>&nbsp;FP TO INT Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 (int)(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>85</b></TD>
+<TD ALIGN=left><b>&nbsp;FP TO INT</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 (int)(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>86</b></TD>
+<TD ALIGN=left><b>&nbsp;INT TO FP Y</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 (float)(Y)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>87</b></TD>
+<TD ALIGN=left><b>&nbsp;INT TO FP</b></TD>
+<TD ALIGN=left><b>&nbsp;Y &#8678 (float)(M(Z))</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>88</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP EQ I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y = A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>89</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP GT I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y > A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>90</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP LT I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y < A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>91</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP NEQ I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ne; A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>92</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP GTE I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ge; A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>93</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP LTE I</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &le; A, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>94</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP EQ (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y = A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>95</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP GT (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y > A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>96</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP LT (indirect)</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y < A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>97</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP NEQ (indirect)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ne; A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>98</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP GTE (indirect)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &ge; A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>99</b></TD>
+<TD ALIGN=left><b>&nbsp;F JUMP LTE (indirect)&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;If Y &le; A, PC &#8678 M(Z)</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>100</b></TD>
+<TD ALIGN=left><b>&nbsp;CALL&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;Stack &#8678 PC, PC &#8678 Z</b></TD>
+</TR>
+<TR>
+<TD ALIGN=center><b>101</b></TD>
+<TD ALIGN=left><b>&nbsp;RETURN&nbsp;</b></TD>
+<TD ALIGN=left><b>&nbsp;PC &#8678 Stack</b></TD>
+</TR>
+</TABLE>
+</center>
+</font>
+</div>
+</body>
+</font>
+</html>
+</TABLE>
+</center>
+</font>
+</div>
+</body>
+</font>
+</html>
