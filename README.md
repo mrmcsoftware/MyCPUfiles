@@ -46,6 +46,11 @@ Instruction Set: [instset6.htm](instset6.htm)
 
   -  [My CPU Design in an FPGA Via Collaboration with Dr. Kevin Walsh & His Improvements to Logisim](https://www.youtube.com/watch?v=rpuB1mYrEKY)
 
+## Simulator and Assembler
+
+I have made a simulator with assembler that runs in your browser.  To access it
+go to my [CPUsimulator](https://www.github.com/mrmcsoftware/CPUsimulator) repo.  You can also go to the [live demo](https://mrmcsoftware.github.io/CPUsimulator) but you would need to read the info in the repo to know how to use it well.
+
 ## Author
 
 Mark Craig
