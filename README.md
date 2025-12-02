@@ -45,6 +45,8 @@ Instruction Set: [instset5.htm](instset5.htm)
 Instruction Set: [instset6.htm](instset6.htm)
 
   -  [My CPU Design in an FPGA Via Collaboration with Dr. Kevin Walsh & His Improvements to Logisim](https://www.youtube.com/watch?v=rpuB1mYrEKY)
+  
+  -  [Very Fast and Versatile GPU Component for my Logisim CPU / Computer (Blits, Sprites, Polygons, etc.)](https://www.youtube.com/watch?v=CsjMJFTHkPo)
 
 ## Simulator and Assembler
 
